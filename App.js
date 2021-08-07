@@ -1,40 +1,37 @@
 // import logo from './logo.svg';
 import './App.css';
 import {
-  
-  Route,
-  Link
+  BrowserRouter as 
+  NavLink
 } from "react-router-dom";
-import Login from './components/Login'
-import About from './components/About'
-import Home from './components/Home'
-import Contact from './components/Contact'
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Login from './pages/Login';
 
 
 function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/home" activeClassName="selected">HOME</Link>
-        <Link to="/about" activeClassName="selected">ABOUT</Link>
-        <Link to="contact" activeClassName="selected">CONTACT</Link>
-        <Link to="/Homlogin" activeClassName="selected">LOGIN</Link>
-       </nav>
+        <NavLink to="/home" activeClassName="selected" className="navtext">HOME</NavLink>
+        <NavLink to="/about" activeClassName="selected" className="navtext">ABOUT</NavLink>
+        <NavLink to="/contact" activeClassName="selected" className="navtext">CONTACT</NavLink>
+        <NavLink to="/login" activeClassName="selected" className="navtext">LOGIN</NavLink>
+      </nav>
       
-         <Route path="/home">
-      <Home/>
-    </Route>
-    <Route path="/about">
-      <About/>
-    </Route>
-    <Route path="/contact">
-      <Contact/>
-    </Route>
-    <Route path="/login">
-      <Login/>
-    </Route>
-   
-    
+      <Route path="/home">
+        <Home/>
+      </Route>
+      <Route path="/about">
+        <About/>
+      </Route>
+      <Route path="/contact">
+        <Contact/>
+      </Route>
+      <Route path="/login">
+        <Login/>
+      </Route>
     </div>
   );
 }
